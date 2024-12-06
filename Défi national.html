@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Web Interactif</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h2>Menu</h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li><a href="https://www.raceforwater.org/en/" target="_blank">Race For Water</a></li>
+        <li><a href="https://fr.wikipedia.org/wiki/Oc%C3%A9an" target="_blank">L'océan</a></li>
+        <li><a href="https://fr.wikipedia.org/wiki/Changement_climatique" target="_blank">Changement climatique</a></li>
+    </ul>
+</div>
+
+<!-- Main content -->
+<div class="main-content">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <h1>Le Corps Humain et l'Environnement</h1>
+
+    <p>Survolez ou cliquez sur les différentes parties du corps pour explorer l'impact de l'océan et du réchauffement climatique.</p>
+
+    <!-- Human Body Interactive -->
+    <div class="human-body">
+        <svg id="human-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 600">
+            <!-- Corps humain (simplifié et plus grand) -->
+            <circle id="head" cx="150" cy="100" r="50" fill="peachpuff" stroke="black" stroke-width="3" />
+            <image id="img2" href="https://imgs.search.brave.com/iXpmUj5whNIaOSGxkt1SoE2yeGYgtQpCret2hypPOss/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNi8w/NC8wMS8wMC8yOC9m/YWNlLTEyOTgyMDJf/NjQwLnBuZw" x="85" cy="50" r="10" width="130" height="200"/>
+            <rect id="torso" x="100" y="150" width="100" height="150" fill="peachpuff" stroke="black" stroke-width="3" />
+            <image id="img" href="https://imgs.search.brave.com/15X4M1dvmVop_jx1RMBFRUc7NpHewRCQa42fX26PSYs/rs:fit:860:0:0:0/g:ce/aHR0cDovL3d3dy5h/dXhjb3VsZXVyc2Rh/bGl4LmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxOS8wNy90/b3JzZS0xNS04ODR4/MTAyNC5qcGc" x="100" y="150" width="100" height="150" preserveAspectRatio="none"/>
+            <rect id="left-arm" x="50" y="180" width="40" height="120" fill="peachpuff" stroke="black" stroke-width="1" />
+            <image id="im3" href="Capture d'écran 2024-12-06 025826.png" x="50" y="180" width="40" height="120" preserveAspectRatio="none"/>
+            <rect id="right-arm" x="210" y="180" width="40" height="120" fill="peachpuff" stroke="black" stroke-width="3" />
+            <image id="img3" href="Capture d'écran 2024-12-06 025826.png" x="210" y="180" width="40" height="120" preserveAspectRatio="none"/>
+            <rect id="left-leg" x="100" y="300" width="40" height="150" fill="peachpuff" stroke="black" stroke-width="3" />
+             <image id="img41" href="Capture d'écran 2024-12-06 031145.png" x="100" y="300" width="40" height="150"preserveAspectRatio="none" />
+            <rect id="right-leg" x="160" y="300" width="40" height="150" fill="peachpuff" stroke="black" stroke-width="3" />
+            <image id="img42" href="Capture d'écran 2024-12-06 031145.png" x="160" y="300" width="40" height="150"preserveAspectRatio="none" />
+        </svg>
+    </div>
+
+    <div id="description" class="description">
+        <p> Cliquez sur les différentes parties du corps pour en savoir plus !</p>
+    </div>
+</div>
+
+<script>
+    // Fonction pour ouvrir/fermer la sidebar
+    function toggleSidebar() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+
+    // Affichage dynamique de l'explication selon la partie cliquée
+    document.getElementById('img2').addEventListener('click', function() {
+        document.getElementById('description').innerHTML = "<h3>Les Dauphins</h3><p>Les dauphins sont des créatures marines fascinantes. Ils sont connus pour leur intelligence et leur capacité à communiquer entre eux à travers des sons et des gestes. Ils jouent un rôle essentiel dans les écosystèmes marins, notamment en régulant les populations de poissons et en maintenant l'équilibre de la chaîne alimentaire.</p>";
+    });
+
+    document.getElementById('img').addEventListener('click', function() {
+        document.getElementById('description').innerHTML = "<h3>La Grande Barrière de Corail</h3><p>La Grande Barrière de Corail est le plus grand système corallien du monde, situé au large des côtes australiennes. Elle abrite une biodiversité marine exceptionnelle, comprenant des poissons, des coraux et des mammifères marins. Cependant, elle est menacée par le réchauffement climatique, qui provoque le blanchiment des coraux et la perte de biodiversité.</p>";
+    });
+    document.getElementById('img41').addEventListener('click', function() {
+        document.getElementById('description').innerHTML = "<h3>Les Nageoires</h3><p>Les nageoires, également présentes chez les poissons et d'autres créatures marines, sont essentielles à leur mobilité. Leur évolution leur permet de s'adapter à différents environnements aquatiques. Cependant, la dégradation des écosystèmes marins due à l'activité humaine met en péril ces organismes, en particulier les poissons et les mammifères marins qui en dépendent.</p>";
+    });
+    document.getElementById('img42').addEventListener('click', function() {
+        document.getElementById('description').innerHTML = "<h3>Les Nageoires</h3><p>Les nageoires, également présentes chez les poissons et d'autres créatures marines, sont essentielles à leur mobilité. Leur évolution leur permet de s'adapter à différents environnements aquatiques. Cependant, la dégradation des écosystèmes marins due à l'activité humaine met en péril ces organismes, en particulier les poissons et les mammifères marins qui en dépendent.</p>";
+    });
+</script>
+
+<style>
+/* Styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://imgs.search.brave.com/UKGHiXdqwV4WhFTu0GBSf5Wp-SmE1CHinzabgA1T2a8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTA4/NjU3OTk4MC92ZWN0/b3IvYXJjdGljLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1x/cmxVczBrZXVnT0lO/eElYemlMUlRhR09U/S0U0Qk15R1hNZEVx/QVRnbDhVPQ);
+    color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #575757;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 50px;
+    padding: 20px;
+}
+
+.toggle-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Human Body SVG */
+.human-body {
+    text-align: center;
+    margin-top: 60px;
+}
+
+#human-svg {
+    width: 300px;
+    height: 400px;
+    cursor: pointer;
+}
+
+#human-svg:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+/* Sidebar active state */
+.sidebar.active {
+    transform: translateX(250px);
+}
+
+/* Description box */
+.description {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+.description h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        left: 0;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+}
+</style>
+
+</body>
+</html>
